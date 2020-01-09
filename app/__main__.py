@@ -17,12 +17,17 @@ async def on_message(message):
 
     if message.content.startswith('-test'):
         #msg = 'Hello {0.author.mention} bot structure better organized now maybe. Need to move bot token to private file retard'.format(message)
-        msg = ':crab: :crab: Hi im alex i suck at siege :crab: :crab:'
+        msg = ':crab: :crab: Hi im a bot' :crab: :crab:'
+        await message.channel.send(msg.format(message.author))
+
+    if message.content.startswith('-test2'):
+        #msg = 'Hello {0.author.mention} bot structure better organized now maybe. Need to move bot token to private file retard'.format(message)
+        msg = 'still here'
         await message.channel.send(msg.format(message.author))
     if message.content.startswith('-play'):
         botInst = MusicManager('me')
 
-        msg = 'Playing Despacito'.format(message)
+        msg = 'Playing song'.format(message)
         await botInst.test(message)
         #await message.channel.send(msg.format(message.author))
 

@@ -66,14 +66,19 @@ class MusicManager:
             'outtmpl': '%(title)s.%(etx)s',
             'quiet': False
         }
-        url = 'https://www.youtube.com/watch?v=z-zxaKQfW6s'
+	#predefined url for now
+        url = 'https://www.youtube.com/watch?v=1vrEljMfXYo'
         #setx /M PATH "E:\Documents\discbot\discbot\libs\ffmpeg-20190129-2e2b44b-win64-static;%PATH%"
         user = message.author
         voice_channel = user.voice.channel
         
         #vc = await client.join_voice_channel(voice_channel)
         #message.state.voice = await voice_channel.connect()
-        vc = await voice_channel.connect()
+        try: 
+            vc = await voice_channel.connect()
+        except discord.ClientException:
+            await message.channel.send('Already in a voice channel'.format(message.author))
+            
         #player = await vc.create_ytdl_player(url)
         #player = vc.play(discord.FFmpegPCMAudio(url))
 

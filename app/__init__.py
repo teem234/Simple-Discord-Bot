@@ -5,7 +5,9 @@ import discord
 
 
 client = discord.Client()
-myCode = 'MzIwNjMyNDAxMTE2MjY2NDk2.DzJitA._OfusaaL0O3cviAqdhlBbR0cwSc'
+
+#insert DISCORD API TOKEN BELOW IN myCode
+myCode = ''
 
 #app.config.from_object(Config)
 
